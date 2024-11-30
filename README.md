@@ -49,9 +49,8 @@ a += String.valueOf(randomCharacter());
 return a;
 }
 
-````
-
 ## گام پنجم: نتیجه پروفایلینگ برنامه
+
 همانطور که انتظار می‌رود، به دلیل استفاده نامناسب از String که یک داده‌ساختار immutable یا به اصطلاح تغییرناپذیر است، میزان مصرف منابع این متود بالا خواهد بود.
 
 ![image1](\images\image1.png)
@@ -60,6 +59,7 @@ return a;
 ## گام ششم: اصلاح متود `createRandomString`
 
 با توجه به نکته‌ای که درباره داده‌ساختار String بیان کردیم، بهتر است از StringBuilder برای مواردی که تغییرات در آن زیاد رخ می‌دهند (مثل اینجا) استفاده کنیم. در نتیجه کد ما به صورت زیر در خواهد آمد:
+
 ```java
 private static String createRandomString() {
         StringBuilder a = new StringBuilder();
@@ -68,7 +68,7 @@ private static String createRandomString() {
         }
         return a.toString();
     }
-````
+```
 
 ## گام هفتم: پروفایلینگ برنامه جدید
 
