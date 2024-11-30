@@ -17,19 +17,23 @@
 
 نسخه جدید متود `temp`:
 
-```java
- public static void temp() {
-  int size = 10000 * 20000; // Total size needed
-  int[] a = new int[size];
 
-  int index = 0;
-  for (int i = 0; i < 10000; i++) {
-    for (int j = 0; j < 20000; j++) {
-      a[index++] = i + j;
-    }
-  }
-}
+```java
+  public static void temp() {
+   int size = 10000 * 20000; // Total size needed
+   int[] a = new int[size];
+ 
+   int index = 0;
+   for (int i = 0; i < 10000; i++) {
+     for (int j = 0; j < 20000; j++) {
+       a[index++] = i + j;
+     }
+   }
+ }
 ```
+
+
+
 
 ## گام سوم: پروفایلینگ بعد از اصلاح کد
 
@@ -37,24 +41,34 @@
 ![Screenshot from 2024-11-29 16-43-45](https://github.com/user-attachments/assets/c404df69-6b46-49a9-be6c-efe19efe3471)
 ![Screenshot from 2024-11-29 16-43-54](https://github.com/user-attachments/assets/6274227c-3b09-4475-9dc2-700da3684cfc)
 
+
+
 ## گام چهارم: نوشتن برنامه‌ای جدید
 
 در این گام مطابق خواسته سوال یک تابعی طراحی شده است که سبب مصرف بیش از حد منابع بشود. تابع `createRandomString` به صورت زیر به دنبال تولید متنی تصادفی به طول ۱ میلیون کاراکتر است:
-‍‍‍```java
-private static String createRandomString() {
-String a = "";
-for (int i = 0; i < 1_000_000; i++) {
-a += String.valueOf(randomCharacter());
-}
-return a;
-}
+
+
+
+```java
+  private static String createRandomString() {
+  String a = "";
+  for (int i = 0; i < 1_000_000; i++) {
+  a += String.valueOf(randomCharacter());
+  }
+  return a;
+  }
 ```
+
+
+
 ## گام پنجم: نتیجه پروفایلینگ برنامه
 
 همانطور که انتظار می‌رود، به دلیل استفاده نامناسب از String که یک داده‌ساختار immutable یا به اصطلاح تغییرناپذیر است، میزان مصرف منابع این متود بالا خواهد بود.
+![profiling](https://github.com/user-attachments/assets/c5c07660-6ee3-48b3-8f56-203aa3f2da53)
+![profiling1](https://github.com/user-attachments/assets/a77c2936-6271-42da-ae15-8e6bd3c00e58)
 
-![image1](\images\image1.png)
-![image2](\images\image2.png)
+
+
 
 ## گام ششم: اصلاح متود `createRandomString`
 
@@ -74,5 +88,6 @@ private static String createRandomString() {
 
 همانطور که انتظار می‌رفت، با تغییر ایجاد شده، مدت زمان اجرا و منابع مصرفی برنامه به شدت کاهش یافت.
 
-![image3](\images\image3.png)
-![image4](\images\image4.png)
+![after](https://github.com/user-attachments/assets/b530dccb-20e0-4ddf-9b69-5ab9b0d53b21)
+![after1](https://github.com/user-attachments/assets/9ae807ad-edf3-41e6-b1b7-ba39bc46a91a)
+
