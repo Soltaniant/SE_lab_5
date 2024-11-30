@@ -54,8 +54,8 @@ return a;
 ## گام پنجم: نتیجه پروفایلینگ برنامه
 همانطور که انتظار می‌رود، به دلیل استفاده نامناسب از String که یک داده‌ساختار immutable یا به اصطلاح تغییرناپذیر است، میزان مصرف منابع این متود بالا خواهد بود.
 
-![image1](C:\Users\GMZ\SE\HW5\SE_lab_5\images\image1.png)
-![image2](C:\Users\GMZ\SE\HW5\SE_lab_5\images\image2.png)
+![image1](\images\image1.png)
+![image2](\images\image2.png)
 
 ## گام ششم: اصلاح متود `createRandomString`
 
@@ -74,5 +74,5 @@ private static String createRandomString() {
 
 همانطور که انتظار می‌رفت، با تغییر ایجاد شده، مدت زمان اجرا و منابع مصرفی برنامه به شدت کاهش یافت.
 
-![image3](C:\Users\GMZ\SE\HW5\SE_lab_5\images\image3.png)
-![image4](C:\Users\GMZ\SE\HW5\SE_lab_5\images\image4.png)
+![image3](\images\image3.png)
+![image4](\images\image4.png)
